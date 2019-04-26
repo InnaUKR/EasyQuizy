@@ -1,7 +1,9 @@
-﻿namespace EQ.Identity.Models.Response
+﻿using System;
+
+namespace EQ.Identity.Models.Response
 {
     public class CreateUserResponse : BaseResponse
     {
-        public string UserId { get; set; }
+        public Guid UserId { get; set; }
     }
 }

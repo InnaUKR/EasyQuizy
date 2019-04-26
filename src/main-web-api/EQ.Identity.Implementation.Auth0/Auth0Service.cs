@@ -47,13 +47,18 @@ namespace EQ.Identity.Implementation.Auth0
             return response;
         }
 
+        public Task<BlockUserResponse> ChangeBlockStateAsync(Guid userId, bool isBlocked)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<ChangeUserEmailResponse> ChangeUserEmailAsync(ChangeUserEmailSecurityIdDto user)
         {
             var response = new ChangeUserEmailResponse();
 
             try
             {
-                await _managementApiClient.Users.UpdateAsync(user.UserSecuriryId, new UserUpdateRequest
+                await _managementApiClient.Users.UpdateAsync(user.UserSecuriryId.ToString(), new UserUpdateRequest
                 {
                     VerifyEmail = true,
                     Email = user.Email,
@@ -87,7 +92,7 @@ namespace EQ.Identity.Implementation.Auth0
                     EmailVerified = !verifyEmail,
                     AppMetadata = new
                     {
-                        roles = new[] { user.Type.ToLower() }
+                        roles = new[] { user.Type.ToString().ToLower() }
                     }
                 });
 
@@ -102,9 +107,9 @@ namespace EQ.Identity.Implementation.Auth0
             return response;
         }
 
-        public async Task DeleteUserAsync(string userId)
+        public async Task DeleteUserAsync(Guid userId)
         {
-            await _managementApiClient.Users.DeleteAsync(userId);
+            await _managementApiClient.Users.DeleteAsync(userId.ToString());
         }
 
         public async Task<IdentityUser> GetUserByIdAsync(string userId)

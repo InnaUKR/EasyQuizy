@@ -7,6 +7,6 @@ namespace EQ.DAL.Interfaces
 {
     public interface IUserRepository : IRepositoryAsync<User, Guid>
     {
-        Task<User> GetUserBySecurityIdAsync(string securityId);
+        Task<User> GetUserBySecurityIdAsync(Guid securityId);
     }
 }

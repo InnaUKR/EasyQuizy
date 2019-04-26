@@ -95,34 +95,20 @@ namespace EQ.BLL.Implementation
             {
                 _userRepository.Add(new User
                 {
-                    UserId = Guid.NewGuid(),
+                    Id = Guid.NewGuid(),
                     SecurityId = authResponse.UserId,
-                    Email = userDto.Email,
-                    FirstName = userDto.FirstName,
-                    LastName = userDto.LastName,
-                    IsEmailMarketing = userDto.IsEmailMarketing,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
                     Status = UserStatus.Active,
-                    Type = userDto.Type,
-                    Origin = userDto.Origin,
-                    CreatedDate = DateTime.UtcNow,
-                    LastModifiedDate = DateTime.UtcNow,
-                    ContactNumber = userDto.ContactNumber,
-                    OriginType = userDto.OriginType,
-                    CountryOfResidence = userDto.CountryOfResidence,
-                    Title = userDto.Title,
-                    Gender = userDto.Gender,
-                    Nationality = userDto.Nationality,
-                    isDualNationalityHolder = userDto.isDualNationalityHolder,
-                    OtherDualNationality = userDto.OtherDualNationality,
-                    WhereDidYouHearAboutSwoop = userDto.WhereDidYouHearAboutSwoop,
-                    WhoTellYouAboutSwoop = userDto.WhoTellYouAboutSwoop
+                    Type = model.Type
                 });
 
                 await _userRepository.SaveChangesAsync();
             }
             catch (Exception ex)
             {
-                await _authService.DeleteAsync(authResponse.UserId);
+                await _authService.DeleteUserAsync(authResponse.UserId);
 
                 return new CreateUserResult(false, "Failed to create an user");
             }
@@ -140,17 +126,17 @@ namespace EQ.BLL.Implementation
             return await _userRepository.GetByIdAsync(userId);
         }
 
-        public async Task<User> GetUserBySecurityIdAsync(string securityId)
+        public async Task<User> GetUserBySecurityIdAsync(Guid securityId)
         {
             return await _userRepository.GetUserBySecurityIdAsync(securityId);
         }
 
-        public Task<UserDetailsDto> GetUserDetailsBySecurityIdAsync(string securityId)
+        public Task<UserDetailsDto> GetUserDetailsBySecurityIdAsync(Guid securityId)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<bool> IsActiveBySecurityIdAsync(string securityId)
+        public async Task<bool> IsActiveBySecurityIdAsync(Guid securityId)
         {
             var user = await _userRepository.GetUserBySecurityIdAsync(securityId);
 

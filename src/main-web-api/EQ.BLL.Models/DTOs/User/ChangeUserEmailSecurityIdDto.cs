@@ -1,8 +1,10 @@
-﻿namespace EQ.BLL.Models.DTOs.User
+﻿using System;
+
+namespace EQ.BLL.Models.DTOs.User
 {
     public class ChangeUserEmailSecurityIdDto
     {
-        public string UserSecuriryId { get; set; }
+        public Guid UserSecuriryId { get; set; }
 
         public string Email { get; set; }
     }

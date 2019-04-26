@@ -11,9 +11,9 @@ namespace EQ.BLL.Interfaces
     {
         Task<User> GetUserByIdAsync(Guid userId);
 
-        Task<User> GetUserBySecurityIdAsync(string securityId);
+        Task<User> GetUserBySecurityIdAsync(Guid securityId);
 
-        Task<UserDetailsDto> GetUserDetailsBySecurityIdAsync(string securityId);
+        Task<UserDetailsDto> GetUserDetailsBySecurityIdAsync(Guid securityId);
 
         UsersListPagedDto GetFiltered(string search, int skip, int take, string orderBy, OrderType orderType);
 
@@ -29,6 +29,6 @@ namespace EQ.BLL.Interfaces
 
         bool IsAdminType(UserType userType);
 
-        Task<bool> IsActiveBySecurityIdAsync(string securityId);
+        Task<bool> IsActiveBySecurityIdAsync(Guid securityId);
     }
 }

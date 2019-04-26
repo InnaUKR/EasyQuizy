@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EQ.BLL.Models\EQ.BLL.Models.csproj" />
+    <ProjectReference Include="..\EQ.DAL.Domain\EQ.DAL.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

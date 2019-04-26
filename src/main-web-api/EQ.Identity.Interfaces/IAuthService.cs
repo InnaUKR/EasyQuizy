@@ -1,6 +1,7 @@
 ﻿using EQ.BLL.Models.DTOs.User;
 using EQ.Identity.Models;
 using EQ.Identity.Models.Response;
+using System;
 using System.Threading.Tasks;
 
 namespace EQ.Identity.Interfaces
@@ -19,8 +20,8 @@ namespace EQ.Identity.Interfaces
 
         Task<ChangeUserEmailResponse> ChangeUserEmailAsync(ChangeUserEmailSecurityIdDto user);
 
-        Task<BlockUserResponse> ChangeBlockStateAsync(string userId, bool isBlocked);
+        Task<BlockUserResponse> ChangeBlockStateAsync(Guid userId, bool isBlocked);
 
-        Task DeleteUserAsync(string userId);
+        Task DeleteUserAsync(Guid userId);
     }
 }

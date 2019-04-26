@@ -4,8 +4,9 @@ using System;
 
 namespace EQ.DAL.Domain
 {
-    public class User : UserEntity<Guid, string>
+    public class User : UserEntity<Guid, Guid>
     {
         public UserStatus Status { get; set; }
+        public UserType Type { get; set; }
     }
 }

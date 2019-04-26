@@ -14,7 +14,7 @@ namespace EQ.DAL.Implementation.EFCore
 
         }
 
-        public async Task<User> GetUserBySecurityIdAsync(string securityId)
+        public async Task<User> GetUserBySecurityIdAsync(Guid securityId)
         {
             return await GetSingleOrDefaultAsync(x => x.SecurityId == securityId);
         }
