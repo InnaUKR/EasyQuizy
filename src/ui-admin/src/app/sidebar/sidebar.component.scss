@@ -1,7 +1,13 @@
 .nav-link {
     padding: .1rem 1rem;
+
+    &:active {
+      background-color: #007bff;
+      color: white;
+    }
   
     &:hover {
-      background-color: #007bff;
+      //background-color: #007bff;
+      color: #24568b;
     }
 }

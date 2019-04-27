@@ -5,12 +5,21 @@
 }
 
 .logo-left{
-    background-color: #ff6b6b;
-    padding: 3px 5px 3px 3px;
+    background-color: #ffffff;
+    color: #007bff;
+    padding: -4px;
     border-radius: 4px;
+    
 }
 .logo-right{
-    padding: 3px 8px 3px 3px;
+    padding: 3px 3px 3px 3px;
+    margin-left: -5px;
+    border-radius: 4px;
+}
+
+.logo-right2{
+    color: #ff0000;
+    padding: 3px 3px 3px 3px;
     margin-left: -5px;
     border-radius: 4px;
 }
