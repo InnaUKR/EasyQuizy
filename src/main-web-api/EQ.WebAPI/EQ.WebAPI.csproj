@@ -5,12 +5,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\v1\Admin\" />
+    <Folder Include="Controllers\v1\Client\" />
+    <Folder Include="Models\Response\" />
+    <Folder Include="Models\Request\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Auth0.AuthenticationApi" Version="6.0.0" />
+    <PackageReference Include="Auth0.Core" Version="6.0.0" />
+    <PackageReference Include="Auth0.ManagementApi" Version="5.11.0" />
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EQ.Identity.Implementation.Auth0\EQ.Identity.Implementation.Auth0.csproj" />
   </ItemGroup>
 
 </Project>

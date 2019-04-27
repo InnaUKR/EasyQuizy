@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EQ.Common.Models\EQ.Common.Models.csproj" />
-    <ProjectReference Include="..\EQ.DAL.Infrastructure\EQ.DAL.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
