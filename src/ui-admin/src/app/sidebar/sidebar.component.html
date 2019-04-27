@@ -1,11 +1,11 @@
 <ul class="nav nav-pills flex-column">
   <li class="nav-item">
-    <a class="nav-link"  routerLink="/users" >Users</a>
+    <a [routerLinkActive]="['active']" class="nav-link"  routerLink="/users" >Users</a>
   </li>
   <li class="nav-item">
-      <a class="nav-link" routerLink="/categories">Categories</a>
+      <a [routerLinkActive]="['active']" class="nav-link" routerLink="/categories">Categories</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" routerLink="/quizzes">Quizzes</a>
+        <a [routerLinkActive]="['active']" class="nav-link" routerLink="/quizzes">Quizzes</a>
       </li>
 </ul>
