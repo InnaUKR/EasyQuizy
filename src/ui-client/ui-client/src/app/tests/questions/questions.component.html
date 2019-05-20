@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination pagination-circle pg-blue" >
+      <li *ngFor="let question of questionsList; let i = index" class="page-item" [ngClass]="{'active': question.id==id}" (click)="changeCurrentQuestionById(question.id)" >
+        <a class="page-link">{{i+1}}</a>
+      </li>
+    </ul>
+  </nav>
+  <span class="remained-space"></span>
+  
+</div>
+  
+  
+  <form [formGroup]="questionsForm" class="col-sm-10 col-md-7 form">
+    <h3>{{currentQuestion.text}}</h3>
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <mat-radio-group class = "tp-radio-group" formControlName="answers">
+        <mat-list-item *ngFor = "let answer of currentQuestion.answersList">
+            <mat-radio-button class = "tp-radio-button" value = {{answer.id}}>
+            {{answer.content}}
+          </mat-radio-button>
+        </mat-list-item>
+      </mat-radio-group>
+    </mat-nav-list>
+    <mat-divider></mat-divider>
+  </form>
+  
+  <div class="finish-test">
+    <a href="http://localhost:4200/test/4/result">
+      <button type="button" class="btn btn-success" (click)="startTest()">Закончить тест</button>
+    </a>
+  </div>
+  

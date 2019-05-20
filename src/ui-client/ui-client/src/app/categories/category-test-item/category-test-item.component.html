@@ -1,0 +1,5 @@
+<img class="card-img-top" [src]="test.img" [alt]="test.title">
+<div class="card-body">
+  <h5 class="card-title">{{test.title}}</h5>
+  <p>{{test.description.length>100 ? test.description.slice(0, 100)+ '...' : test.description}}</p>
+</div>

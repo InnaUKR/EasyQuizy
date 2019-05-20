@@ -1,0 +1,5 @@
+<mat-list-item class="list-item category" *ngFor="let category of categoryList" >
+
+  <span (click)="openCategoryById(category.id)"> {{category.title}}</span>
+
+</mat-list-item>

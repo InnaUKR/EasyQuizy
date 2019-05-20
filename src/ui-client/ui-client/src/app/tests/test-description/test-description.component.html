@@ -1,0 +1,32 @@
+<section class="home_banner_area">
+  <div class="banner_inner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="banner_content">
+            <h1 class="text-uppercase">{{test.title}}</h1>
+            <button type="button" class="btn btn-success" (click)="startTest()">Начать тест</button>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="home_right_img">
+            <img class="" [src]="test.img" [alt]="test.title">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about_area section_gap">
+  <div class="container">
+    <div class="row justify-content-start align-items-center">
+      <div class="offset-lg-1 col-lg-8">
+        <div class="main_title text-left">
+          <h2>О тесте</h2>
+          {{test.description}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
